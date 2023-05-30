@@ -1,2 +1,0 @@
-# cocoLib
-my document library
