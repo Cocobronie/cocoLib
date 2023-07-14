@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.23072b34.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/08 Vue3 响应式原理.md","filePath":"vue3/08 Vue3 响应式原理.md","lastUpdated":null}'),_={name:"vue3/08 Vue3 响应式原理.md"};function r(o,s,n,c,d,p){return t(),a("div")}const l=e(_,[["render",r]]);export{i as __pageData,l as default};
