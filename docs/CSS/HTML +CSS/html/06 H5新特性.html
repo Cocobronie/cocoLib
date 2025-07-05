@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    header,nav{
+        height: 120px;
+        width: 888px;
+        background-color: pink;
+        border-radius: 15px;
+        margin: 15px auto;
+    }
+    section{
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+    }
+    ul{
+        text-align: center;
+    }
+    ul,li{
+        list-style: none;
+        padding: 20px;
+    }
+    input::placeholder{
+        color: pink;
+    }
+</style>
+<body>
+     <!-- 1、语义化标签  -->
+    <h1>1、语义化标签</h1>
+    <header></header>
+    <nav></nav>
+    <section></section>
+
+    <!-- 2、多媒体标签 -->
+    <h1>2、多媒体标签</h1>
+    <!-- 自动播放：autoplay+ muted -->
+    <video width="100%" src="../media/RRandZZ.mp4" loop controls autoplay muted poster="../images/ZZandRR.png"></video>
+    <audio src="../media/ZZ.aac" controls></audio>
+
+    <!-- 3、input新增 -->
+    <h1>3、input新增</h1>
+    <form action="">
+        <ul>
+            <li>搜索：<input type="search" required autofocus></li>
+            <li>网址：<input type="url" placeholder="www.ZZandRR.com"></li>
+            <li>邮箱：<input type="email" ></li>
+            <li>日期：<input type="date" ></li>
+            <li>时间：<input type="time" ></li>
+            <li>数字：<input type="number" ></li>
+            <li>手机：<input type="tel" ></li>
+            <li>颜色：<input type="color" ></li>
+            <li>文件可多选：<input type="file" multiple ></li>
+            <li><input type="submit" name="" id=""></li>
+        </ul>
+    </form>
+</body>
+</html>

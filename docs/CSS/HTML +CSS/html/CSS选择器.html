@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 后代选择器 */
+    ul li{
+        color: yellowgreen;
+    }
+    ul li a{
+        color: red;
+    }
+    /* 子选择器 */
+    .nav>a{
+        color: red;
+    }
+    /* 并集选择器 */
+    div,
+    p,
+    .pig li{
+        color: antiquewhite;
+    }
+    /* 伪类选择器 */
+    a:link{         /* 所有未被访问过的链接 */
+        color: black;
+    }
+    a:visited{      /* 所有被访问过的链接 */
+        color: aqua;
+    }
+    a:hover{        /* 鼠标经过 */
+        color: aquamarine;
+    }   
+    a:active{       /* 鼠标正在按下还未弹起 */
+        color: bisque;
+    }
+    /* focus伪类选择器 */
+    input:focus{
+        background: red;
+    }
+</style>
+<body>
+    <!-- 后代选择器 -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4
+            <a href="">变红</a>
+        </li>
+    </ul>
+    <!-- 子选择器 -->
+    <div class="nav">
+        <a href="#">我是儿子</a>
+        <p>
+            <a href="#">我是孙子</a>
+        </p>
+    </div>
+    <!-- 并集选择器 -->
+    <div>熊大</div>
+    <p>熊二</p>
+    <ul class="pig">
+        <li>我是佩奇</li>
+        <li>我是佩奇</li>
+        <li>我是佩奇</li>
+    </ul>
+    <!-- 伪类选择器 -->
+    <a href="#">小猪佩奇</a>
+    <!-- focus伪类选择器 -->
+    focus伪类选择器:<input type="text" name="" id="">
+    focus伪类选择器:<input type="text" name="" id="">
+    focus伪类选择器:<input type="text" name="" id="">
+    focus伪类选择器:<input type="text" name="" id="">
+</body>
+</html>

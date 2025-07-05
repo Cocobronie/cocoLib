@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        overflow:hidden         /* 清除浮动 */
+    }
+    ul li{
+        list-style: none;
+        float: left;
+        width: 100px;
+        height: 200px;
+        border: 1px solid red;
+    }
+    .unify li{
+        margin-left: -1px;  
+    }
+    .hover li:hover{
+        position: relative;     
+        border: 1px solid blue; 
+    }
+    .box{
+        width: 300px;
+        height: 70px;
+        background-color: pink;
+        margin: 100px auto;
+    }
+    .pic{
+        float: left;
+        width: 120px;
+        height: 60px;
+    }
+    .pic img{
+        width: 100%;
+    }
+    .box a{
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        background-color:#efefef;
+        border: 1px solid #ccc;
+        text-align: center;    /*  水平居中 */
+        line-height: 36px;     /*  垂直居中 */
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+    }
+    .box .pre,.box .next{
+        width: 65px;
+    }
+    .box .current,.box .elp{
+        background-color:#fff;
+        border: none;
+    }
+    .box input{
+        width: 45px;
+        height: 36px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+    .box button{
+        width: 60px;
+        height: 36px;
+        background-color:#efefef;
+        border: 1px solid #ccc;
+    }
+    .trangle{
+        width: 0;
+        height: 0;
+        border-top: 24px solid transparent;
+        border-left: 0 solid yellow;
+        border-right: 10px solid yellowgreen;
+        border-bottom: 0;
+    }
+    .price{
+        width: 160px;
+        height: 24px;
+        border: 1px solid red;
+        margin: 50px auto;
+        line-height: 24px;
+    }
+    .miaosha{
+        position: relative;
+        width: 90px;
+        height: 100%;
+        background-color: red;
+        float: left;
+        text-align: center;
+        color: #fff;
+        font-weight: 700;
+    }
+    .miaosha i{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-right: 10px solid #fff;
+    }
+</style>
+<body>
+    <h1>1、margin负值妙用</h1>
+    <ul>                   <!-- 边框深浅没有统一 -->
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul class="unify">    <!-- 边框深浅统一了 -->
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul class="unify hover">    <!-- 鼠标经过样式 -->
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <h1>2、文字围绕浮动元素</h1>
+    <div class="box">
+        <div class="pic">
+            <img src="images/img.png" alt="">
+        </div>
+        <p>你是哦v九年开始计划波i据 </p>
+    </div>
+
+    <h1>3、行内块元素的巧妙运用</h1>
+    <div class="box" style="background-color: #fff; width:1200px;text-align: center;">
+        <a href="#" class="pre">&lt;&lt;上一页</a>
+        <a href="#" class="current">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#" class="elp">...</a>
+        <a href="#" class="next">&gt;&gt;下一页</a>
+        到第
+        <input type="text" name="" id="">
+        页
+        <button>确定</button>
+    </div>
+
+    <h1>4、CSS三角强化</h1>
+    <div class="box" style="background-color: #fff;">
+        <div class="trangle"></div>
+    </div>
+    <div class="box"></div>
+    <div class="price">
+        <span class="miaosha">
+            $1650
+            <i class="trangle"></i>
+        </span>
+        <span>$5340</span>
+    </div>
+</body>
+</html>

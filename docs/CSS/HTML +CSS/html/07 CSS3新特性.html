@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="font/iconfont.css">
+</head>
+<style>
+     /* Logo 字体 */
+     @font-face {
+        font-family: "iconfont logo";
+        src: url('https://at.alicdn.com/t/font_985780_km7mi63cihi.eot?t=1545807318834');
+        src: url('https://at.alicdn.com/t/font_985780_km7mi63cihi.eot?t=1545807318834#iefix') format('embedded-opentype'),
+            url('https://at.alicdn.com/t/font_985780_km7mi63cihi.woff?t=1545807318834') format('woff'),
+            url('https://at.alicdn.com/t/font_985780_km7mi63cihi.ttf?t=1545807318834') format('truetype'),
+            url('https://at.alicdn.com/t/font_985780_km7mi63cihi.svg?t=1545807318834#iconfont') format('svg');
+    }
+    @font-face {
+        font-family: "iconfont"; /* Project id  */
+        src: url('iconfont.ttf?t=1687666800834') format('truetype');
+    }
+    .iconfont{
+        font-family: "iconfont" !important;
+        font-size: 16px;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    /* 属性选择器：必须是input同时具有 value  */
+    input[value]{
+        color: red;
+    }
+    /* 属性选择器：必须是input同时 value = val  */
+    input[type=text]{
+        background-color: skyblue;
+    }
+    /* 属性选择器：必须是input同时 value = val , 要求 val 有相同开头 */
+    div[class^=icon]{
+        color: skyblue;
+    }
+    /* 属性选择器：必须是input同时 value = val , 要求 val 有相同结尾 */
+    div[class$=data]{
+        color: red;
+    }
+    /* 伪类选择器：第一个孩子 */
+    ul li:first-child{
+        background-color:  antiquewhite;
+    }
+     /* 伪类选择器：最后一个孩子 */
+    ul li:last-child{
+        background-color: cadetblue;
+    }
+    /* 伪类选择器-nth-child(n) : n为数字表示选择第几个孩子 */
+    ul li:nth-child(2){
+        background-color: chocolate;
+    }
+    /* 伪类选择器-nth-child(n) : n为关键字 */
+    .bianse li:nth-child(even){
+        background-color: yellowgreen;
+    }
+    .bianse li:nth-child(odd){
+        background-color: gray;
+    }
+    /* 伪类选择器-nth-child(n) : n为公式：字母 n 表示选择所有 */
+    ol li:nth-child(n){
+        background-color: red;
+    }
+    /* 伪类选择器-nth-child(n) : n为公式： 2n 表示选择偶数 */
+    ol li:nth-child(2n){
+        background-color: pink;
+    }
+    /* 伪类选择器-nth-child(n) : n为公式：2n+1 表示选择奇数 */
+     ol li:nth-child(2n+1){
+        background-color: blue;
+    }
+    /* 伪类选择器-nth-child(n) : n为公式：n+5 表示选择后面5个 */
+    ol li:nth-child(n+5){
+        background-color: red;
+    }
+    /* 伪类选择器-nth-child(n) : n为公式：n+5 表示选择前面5个 */
+    ol li:nth-child(-n+5){
+        background-color: blue;
+    }
+    /* 伪类选择器-nth-of-type(n) : n为公式：n+5 表示选择前面5个 */
+    section div:nth-of-type(1){
+        background-color: chartreuse;
+    }
+    /* 伪元素选择器 */
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+    .box::before{
+        content: '我';    /* 必须要写 */
+        display: inline-block;
+        height: 30px;
+        width: 40px;
+        background-color: palegoldenrod;
+    }
+    .box::after{
+        content: '伪元素';
+    }
+    /* 伪元素字体图标 */
+    .box1{
+        margin: 100px auto;
+        width: 200px;
+        height: 35px;
+        border: 1px solid red;
+    }
+    .box1::after{
+        font-family: "iconfont";
+        content: "\e602";    /* &#xe602 */
+        line-height: 35px;
+        float: right;
+        font-size: 40px;
+        color: chocolate;
+    }
+    /* 伪元素清除浮动*/
+    .clearfy:after{
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    /* 不让border/padding撑大盒子 */
+    p{
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        border: 20px solid red;
+        box-sizing: border-box;
+    }
+    .content{
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        border: 20px solid red;
+        padding: 20px;
+        box-sizing: content-box; /*默认*/
+    }
+    /* 图片变模糊 */
+    img:hover{
+        filter: blur(15px);
+    }
+
+    /* transition:要过渡的时间 花费时间 运动曲线 何时开始 */
+    .tran{
+        width: 200px;
+        height: 100px;
+        background-color: pink;
+        transition: width 1s ease 1s,height 1s;
+    }
+    .tran:hover{
+        width: 400px;
+        height: 200px;
+    }
+    /* 进度条 */
+    .bar{
+        margin: 20px auto;
+        width: 150px;
+        height: 15px;
+        border: 1px solid red;
+        border-radius: 8px;        
+    }
+    .bar_in{
+        width: 50%;
+        height: 100%;
+        border: 1px solid red;
+        border-radius: 8px;
+        background-color: red;
+        transition: width 1s ease 1s;
+    }
+    .bar_in:hover{
+        width: 100%;
+    }
+</style>
+<body>
+    <!-- 1、属性选择器 -->
+    <h1>1、属性选择器</h1>
+    <input type="text" value="请输入用户名"><br>
+    <input type="text"><br>
+    <input type="password" name="" id=""><br>
+    <div class="icon1">1</div>
+    <div class="icon2">2</div>
+    <div class="icon3">3</div>
+    <div class="icon4">4</div>
+    <div>5</div>
+    <div class="1-data">2</div>
+    <div class="2-data">3</div>
+
+    <!-- 2、结构伪类选择器 -->
+    <h1>2、结构伪类选择器</h1>
+    <ul style="line-height: 40px;padding: 10px;">
+        <li>li:first-child</li>
+        <li>li:nth-child(2)</li>
+        <li>li:last-child</li>
+    </ul>
+    <!-- 表格的隔行变色 -->
+    <ul class="bianse" style="line-height: 40px;padding: 10px;">
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+
+    <ol style="line-height: 40px;padding: 10px;">
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+        <li>我是第9个孩子</li>
+    </ol>
+
+    <section>
+        <p>第一个</p>
+        <div>nth-of-type(1)</div>
+        <div>熊二</div>
+    </section>
+
+    <!-- 3、伪元素选择器 -->
+    <h1>3、伪元素选择器</h1>
+    <div class="box">
+        是
+    </div>
+    <!-- 伪元素字体图标 -->
+    <div class="box1 iconfont"></div>
+
+    <!-- 4、盒子模型 -->
+    <div class="content">border/padding会撑大盒子</div>
+    <p>不让border/padding撑大盒子</p>
+
+    <!-- 5、怎样让图片变模糊 -->
+    <img src="../images/abcd.jpg" alt="">
+
+    <!-- 6、计算盒子宽度：子盒子永远比父盒子小30px -->
+    <div style="background-color: aqua;width: 200px;height: 200px;">
+        <div  style="width: calc(100% - 50px);height: 30px;background-color: pink;">注意：“-”号前后必须有空格</div>
+    </div>
+
+    <!-- 7、CSS过渡 -->
+    <div class="tran"></div>
+    <!-- 进度条 -->
+    <div class="bar">
+        <div class="bar_in"></div>
+    </div>
+</body>
+</html>
